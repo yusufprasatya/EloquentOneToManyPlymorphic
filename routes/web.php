@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AplikasiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('input-beasiswa-1', [AplikasiController::class, 'inputBeasiswa1']);
+Route::get('input-beasiswa-2', [AplikasiController::class, 'inputBeasiswa2']);
+
+Route::get('tampil-beasiswa-1', [AplikasiController::class, 'tampilBeasiswa1']);
+Route::get('tampil-beasiswa-1', [AplikasiController::class, 'tampilBeasiswa1']);
+Route::get('tampil-beasiswa-1', [AplikasiController::class, 'tampilBeasiswa1']);
+Route::get('tampil-beasiswa-1', [AplikasiController::class, 'tampilBeasiswa1']);
+
+Route::get('wherehasmorph', [AplikasiController::class, 'wherehasmorph']);
+
+Route::get('update-beasiswa', [AplikasiController::class, 'updateBeasiswa']);
+
+Route::get('delete', [AplikasiController::class, 'delete']);
