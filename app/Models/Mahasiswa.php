@@ -11,7 +11,7 @@ class Mahasiswa extends Model
     public function beasiswas()
     {
         # Declare morphTo method
-        return $this->morphTo('App\Models\Beasiswa', 'beasiswaaable');
+        return $this->morphMany('App\Models\Beasiswa', 'beasiswaable');
         
     }
 }

@@ -18,11 +18,11 @@ Route::get('input-beasiswa-1', [AplikasiController::class, 'inputBeasiswa1']);
 Route::get('input-beasiswa-2', [AplikasiController::class, 'inputBeasiswa2']);
 
 Route::get('tampil-beasiswa-1', [AplikasiController::class, 'tampilBeasiswa1']);
-Route::get('tampil-beasiswa-1', [AplikasiController::class, 'tampilBeasiswa1']);
-Route::get('tampil-beasiswa-1', [AplikasiController::class, 'tampilBeasiswa1']);
-Route::get('tampil-beasiswa-1', [AplikasiController::class, 'tampilBeasiswa1']);
+Route::get('tampil-beasiswa-2', [AplikasiController::class, 'tampilBeasiswa2']);
+Route::get('tampil-beasiswa-3', [AplikasiController::class, 'tampilBeasiswa3']);
+Route::get('tampil-beasiswa-4', [AplikasiController::class, 'tampilBeasiswa4']);
 
-Route::get('wherehasmorph', [AplikasiController::class, 'wherehasmorph']);
+Route::get('wherehasmorph', [AplikasiController::class, 'whereHasMorph']);
 
 Route::get('update-beasiswa', [AplikasiController::class, 'updateBeasiswa']);
 
