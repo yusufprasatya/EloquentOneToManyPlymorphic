@@ -100,4 +100,41 @@ class AplikasiController extends Controller
             echo "$beasiswa->nama, diambil oleh {$beasiswa->beasiswaable->nama} <br>";
         }
     }
+
+    public function updateBeasiswa()
+    {
+        $mahasiswa1 = Mahasiswa::where('nama', 'Leonard Fahey')->first();
+        $beasiswas1 = $mahasiswa1->beasiswas->pluck('nama')->toArray();
+
+        $mahasiswa2 = Mahasiswa::where('nama', 'Addison Murray')->first();
+        $beasiswas2 = $mahasiswa2->beasiswas->pluck('nama')->toArray();
+
+
+        dump($mahasiswa1);
+        dump($mahasiswa1->beasiswas);
+        dump($mahasiswa1->beasiswas->pluck('nama'));
+        dump($mahasiswa1->beasiswas->pluck('nama')->toArray());
+
+        echo "Sebelum Update <hr>";
+        echo "Beasiswa $mahasiswa1->nama: " . implode(", ", $beasiswas1);
+        echo "<br>";
+        echo "Beasiswa $mahasiswa2->nama: " . implode(", ", $beasiswas2);
+
+        echo "<br><br><br>";
+
+        $mahasiswa1->beasiswas()->update([
+            'beasiswaable_id' => $mahasiswa2->id
+        ]);
+
+        $mahasiswa1 = Mahasiswa::where('nama', 'Leonard Fahey')->first();
+        $beasiswas1 = $mahasiswa1->beasiswas->pluck('nama')->toArray();
+
+        $mahasiswa2 = Mahasiswa::where('nama', 'Addison Murray')->first();
+        $beasiswas2 = $mahasiswa2->beasiswas->pluck('nama')->toArray();
+
+        echo "Setelah Update <hr>";
+        echo "Beasiswa $mahasiswa1->nama: " . implode(", ", $beasiswas1);
+        echo "<br>";
+        echo "Beasiswa $mahasiswa2->nama: " . implode(", ", $beasiswas2);
+    }
 }
