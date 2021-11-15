@@ -11,7 +11,7 @@ class AplikasiController extends Controller
 {
     public function inputBeasiswa1()
     {
-        $dosen = Dosen::where('nama', 'Eddie Raynor M.Sc')->first();
+        $dosen = Dosen::where('nama', 'Karen Marvin M.Si')->first();
         $dosen->beasiswas()->createMany([
             [
                 'nama' => "Beasiswa Unggulan Dosen Indonesia",
@@ -136,5 +136,14 @@ class AplikasiController extends Controller
         echo "Beasiswa $mahasiswa1->nama: " . implode(", ", $beasiswas1);
         echo "<br>";
         echo "Beasiswa $mahasiswa2->nama: " . implode(", ", $beasiswas2);
+    }
+
+    public function delete()
+    {
+        $dosen = Dosen::where('nama', 'Karen Marvin M.Si')->first();
+        $dosen->delete();
+        $dosen->beasiswas()->delete();
+
+        echo "Beasiswa $dosen->nama sudah dihapus";
     }
 }
